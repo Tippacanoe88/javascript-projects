@@ -61,7 +61,7 @@ if(weatherStatus === "clear") {
     console.log("The weather is not clear!");
 }
 // Verify shuttle launch can proceed based on above conditions
-if(preparedForLiftoff ===) {
+if(preparedForLiftoff === true) {
     console.log("Shuttle is cleared for take off.")
 } else {
     console.log("Take off has been blocked, re evaluate pre flight check...");
