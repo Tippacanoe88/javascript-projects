@@ -1,6 +1,19 @@
 //We want to COMPLETELY reverse an array by flipping the order of the entries AND flipping the order of characters in each element.
 
 // Part One: Reverse Characters
+let origString = "orange, 123, world, hello";
+
+let reversedCharacters = function (newString) {
+    let words = origString.split('');
+
+    let reversedWords = words.map(word => {
+        return word.split('').reverse().join('');
+    });
+
+    let reversedString = reversedWords.reverse().join(', ');
+    return reversedString;
+}
+console.log (reversedCharacters(origString));
 
 // 1. Define the function as reverseCharacters. Give it one parameter, which will be the string to reverse.
 // 2. Within the function, split the string into an array, then reverse the array.
