@@ -3,8 +3,13 @@
 
 // Code your buildCrewArray function here:
 
-
 let idNumbers = [291, 414, 503, 599, 796, 890];
+let numAstronauts = 3;
+
+const selectRandomEntry = function(arr) {
+  let num = (Math.floor(Math.random() * arr.length));
+  return arr.splice(num, 1)[0];
+}
 
 // Here are the candidates and the 'animals' array:
 let candidateA = {
@@ -51,5 +56,19 @@ let candidateF = {
 };
 
 let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF];
-
+let selectedAstronauts = [];
+if (numAstronauts > idNumbers.length) {
+  console.log("Error: trying to select too many astronauts!");
+} else {
+  console.log(`The selected astronauts are: `);
+  for(let i = 0; i < numAstronauts; i++) {
+    let randomId = selectRandomEntry(idNumbers);
+    let astronaut = animals.find(a => a.astronautID === randomId);
+    if (astronaut) {
+      let selectedAstronauts = [];
+      selectedAstronauts.push(astronaut);
+      console.log(`${astronaut.name}`);
+    } 
+  }
+}
 // Code your template literal and console.log statements:
