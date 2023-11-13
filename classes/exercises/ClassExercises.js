@@ -1,5 +1,5 @@
 // Define your Book class here:
-class Books {
+class Book {
     constructor(title, author, copyrightDate, isbn, pageCount, checkoutCount, discard) {
         this.title = title;
         this.author = author;
@@ -14,7 +14,7 @@ class Books {
     }
 }   
 
-class Manual extends Books {
+class Manual extends Book {
     constructor(title, author, copyrightDate, isbn, pageCount, checkoutCount, discard) {
         super(title, author, copyrightDate, isbn, pageCount, checkoutCount, discard);
     }
@@ -25,7 +25,7 @@ class Manual extends Books {
     }
 }
 
-class Novel extends Books {
+class Novel extends Book {
     constructor(title, author, copyrightDate, isbn, pageCount, checkoutCount, discard) {
         super(title, author, copyrightDate, isbn, pageCount, checkoutCount, discard);
     }
@@ -40,8 +40,22 @@ class Novel extends Books {
 
 
 // Declare the objects for exercises 2 and 3 here:
-let shipBuilding = new Manual('Top Secret Shuttle Building Manual', 'Redacted', 2013, '0000000000000', 1147, 1, 'No');
+const shipBuilding = new Manual('Top Secret Shuttle Building Manual', 'Redacted', 2013, '0000000000000', 1147, 1, 'No');
+
+const prideAndPrejudice = new Novel(
+    'Pride and Prejudice',
+    'Jane Austen',
+    1813,
+    '1111111111111',
+    432,
+    32,
+    'No'
+);
 
 // Code exercises 4 & 5 here:
-deadText.checkout(5);
-deadText.checkoutDispose();
+prideAndPrejudice.checkout(32);
+prideAndPrejudice.checkoutDispose(32);
+prideAndPrejudice.ageOut(1813);
+shipBuilding.checkout(1);
+shipBuilding.checkoutDispose(1);
+shipBuilding.ageOut(2013);
